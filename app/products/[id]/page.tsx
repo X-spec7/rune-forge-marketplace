@@ -1,5 +1,3 @@
-'use server';
-
 import type { Product } from '@/types';
 import { ProductService } from '@/services/ProductService';
 import ProductDetailClient from '@/components/ProductDetailClient';
