@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Product } from '@/types';
 import { Star } from 'lucide-react';
 
@@ -65,9 +66,12 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         >
           Add to Cart
         </button>
-        <button className="px-5 py-3 bg-gold/10 border border-gold text-gold font-semibold rounded-lg transition-all duration-300 hover:bg-gold/20">
+        <Link
+          href={`/products/${product.id}`}
+          className="px-5 py-3 bg-gold/10 border border-gold text-gold font-semibold rounded-lg transition-all duration-300 hover:bg-gold/20 flex items-center justify-center"
+        >
           Details
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { CartItem } from '@/types';
 import { X } from 'lucide-react';
 
@@ -66,9 +67,13 @@ export default function MiniCart({ items, isOpen, onClose, onRemoveItem, total }
           <span>Total:</span>
           <span>${total.toFixed(2)}</span>
         </div>
-        <button className="w-full px-6 py-3 bg-gradient-to-r from-gold to-bronze text-bg font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_5px_20px_rgba(212,175,55,0.5)]">
+        <Link
+          href="/checkout"
+          className="w-full px-6 py-3 bg-gradient-to-r from-gold to-bronze text-bg font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_5px_20px_rgba(212,175,55,0.5)] flex items-center justify-center"
+          onClick={onClose}
+        >
           Checkout
-        </button>
+        </Link>
       </div>
     </div>
   );
