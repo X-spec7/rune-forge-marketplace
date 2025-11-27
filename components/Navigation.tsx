@@ -2,6 +2,7 @@
 
 import { ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface NavigationProps {
   cartCount: number;
@@ -17,20 +18,20 @@ export default function Navigation({ cartCount, onCartToggle }: NavigationProps)
           alt="RUNE Logo"
           className="w-12 h-12 rounded-full drop-shadow-[0_0_15px_rgba(212,175,55,0.8)] transition-all duration-300"
         />
-        <div>
+        <Link href={'/'}>
           <div className="text-2xl font-bold bg-gradient-to-r from-gold-light to-gold bg-clip-text text-transparent animate-ember-glow">
             RUNE
           </div>
           <div className="text-xs text-bronze tracking-[2px] uppercase">
             by RuneForge
           </div>
-        </div>
+        </Link>
       </div>
 
       <div className="flex items-center gap-8">
-        <a href="#marketplace" className="text-text hover:text-gold transition-colors font-semibold hidden md:block">
+        <Link href={'/'} className="text-text hover:text-gold transition-colors font-semibold hidden md:block">
           Marketplace
-        </a>
+        </Link>
         <button
           onClick={onCartToggle}
           className="relative transition-transform hover:scale-110"
