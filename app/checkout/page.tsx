@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import { CartItem } from '@/types';
 import { CartService } from '@/services/CartService';
+import Image from 'next/image';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -16,7 +17,7 @@ export default function CheckoutPage() {
 
   useEffect(() => {
     setItems(cartService.getCart());
-  }, []);
+  }, [cartService]);
 
   const total = items.reduce((sum, item) => sum + item.price, 0);
 
@@ -75,7 +76,7 @@ export default function CheckoutPage() {
                       key={item.id}
                       className="flex items-center gap-4 border-b border-gold/20 pb-4 last:border-0"
                     >
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.name}
                         className="w-16 h-16 drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]"
